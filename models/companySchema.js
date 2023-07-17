@@ -1,28 +1,25 @@
 const mongoose = require('mongoose')
 const companySchema = new mongoose.Schema({
-    
-    companyName : {
-        type : String,
-        require : true
-    },
 
-    city : {
-        type : String,
-        require : true
-    },
-
-    location : {
-        type : String,
-        require : true
-    },
-
-
-    isActive : {
+    companyName: {
         type: String,
-        default : true,
+        require: true
     },
-
-    
+    companyCity: {
+        type: String,
+        require: true
+    },
+    companyLocation: {
+        type: String,
+        require: true
+    },
+    companyPic: {
+        type: String,
+    },
+    isActive: {
+        type: Boolean,
+        default: true,
+    },
 });
 
 companySchema.set("timestamps", true);
