@@ -4,6 +4,10 @@ require('./config/modelConfig')
 let express = require('express')
 const commonRouter = require("./routes/mainRoutes");
 const cron = require('node-cron');
+const logger = require("./utils/logger");
+
+const PORT = process.env.PORT || 5000;
+const HOST = "localhost";
 
 let app = express()
 
@@ -35,4 +39,5 @@ app.get("/send", async (req, res) => {
 
 app.listen(process.env.PORT, (req, res) => {
     console.log(`The server is running on port: ${process.env.PORT}`)
-})
+    logger.info(`Server started and running on http://${HOST}:${PORT}`);
+});

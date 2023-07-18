@@ -3,7 +3,7 @@ const schema = require('./reviewValSchema')
 
 module.exports = {
     createReviewValidation: async (req, res, next) => {
-        const value = await schema.reviewValSchema.validate(req.body, { abortEarly: false })
+        const value = await reviewValSchema.createReview.validate(req.body, { abortEarly: false })
         if (value.error) {
             res.json({
                 success: false,

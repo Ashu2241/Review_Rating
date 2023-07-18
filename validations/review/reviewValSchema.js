@@ -23,10 +23,9 @@ const reviewValSchema = {
         companyRating: joi
             .string()
             .required(),
-    })
+    }).unknown(true),
 }
 
 module.exports =
-{
-    reviewValSchema,
-}
+
+    reviewValSchema
